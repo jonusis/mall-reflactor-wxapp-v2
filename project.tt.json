@@ -1,0 +1,9 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "mall-weapp-reflactorPieces",
+  "appid": "testAppId",
+  "setting": {
+    "es6": false,
+    "minified": false
+  }
+}
