@@ -1,0 +1,43 @@
+.editButton{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 30px;
+    color: red;
+    font-size: 35px;
+}
+.message1{
+    .pho{
+        width: 51px;
+        height:  51px;
+        margin-right: 28px;
+        margin-left: 23px;
+        margin-top: 25px;
+    }
+    .photwo{
+        width: 35px;
+        height: 45px;
+        margin-right: 42px;
+        margin-left: 23px;
+        margin-top: 25px;
+    }
+    .qqinput{
+        display: flex;
+        background-color: #ffffff;
+    }
+    input{
+        height: 89px;
+        width: 100%;
+        border-bottom: solid 1px #ededed;
+        font-size:30px;
+        font-family:PingFang-SC-Regular;
+        font-weight:400;
+    }
+    .bigbox{
+        margin-top: 30px;
+    }
+    .btn{
+        height: 50px;
+        display: flex;
+        float: right;
+    }
+}

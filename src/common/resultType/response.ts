@@ -1,11 +1,11 @@
 interface ResponseDataBto{
     data: string;
-    code: string;
+    code: number;
     msg: string;
 }
 export class ResponseDataDto{
     data: string;
-    code: string;
+    code: number;
     msg: string;
     constructor(orderBuy:ResponseDataBto){
         this.data = orderBuy.data;

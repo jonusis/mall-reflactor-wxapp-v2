@@ -2,18 +2,18 @@ export interface UserBto{
     uid:string;
     account: string;
     age:string;
-    headPicture:number;
-    name:number;
-    password:string;
+    headPicture:string;
+    name:string;
+    password?:string;
     qq:string;
-    sex:string;
-    stNum:number;
-    tel:number;
+    sex:number;
+    stNum?:number;
+    tel:string;
     wechat:string;
 }
 
 export class UserDto{
-    code:string;
+    code:number;
     data:UserBto;
     msg:string;
     constructor(res:any){

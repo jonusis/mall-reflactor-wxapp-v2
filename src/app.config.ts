@@ -2,7 +2,13 @@ export default defineAppConfig({
   pages: [
     'pages/index/index',
     "pages/add/index",
-    "pages/person/index"
+    "pages/add/add",
+    "pages/person/index",
+    "pages/tabList/index",
+    "pages/login/index",
+    "pages/detail/index",
+    "pages/record/index",
+    "pages/personMessage/index"
   ],
   window: {
     backgroundTextStyle: 'light',

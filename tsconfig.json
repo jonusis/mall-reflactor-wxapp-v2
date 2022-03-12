@@ -6,6 +6,7 @@
     "preserveConstEnums": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
+    "enablePullDownRefresh":true,
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
     "outDir": "lib",
@@ -23,5 +24,6 @@
     ]
   },
   "include": ["./src", "global.d.ts"],
-  "compileOnSave": false
+  "compileOnSave": false,
+  "checkSiteMap":false,
 }

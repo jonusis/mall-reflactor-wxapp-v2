@@ -2,8 +2,10 @@ export interface CommentsBto{
     id: string;
     content: string;
     datetime: string;
-    orderbuyID: number;
-    ordercarID:number;
+    username?:string;
+    headpicture?:string;
+    orderbuyID?: number;
+    ordercarID?:number;
     userID:string;
 }
 export class CommentsDto{

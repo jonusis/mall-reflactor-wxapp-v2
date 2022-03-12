@@ -3,7 +3,9 @@ import { View, Text } from '@tarojs/components'
 import {queryOrderBuyList} from '../../common/request/orderBuy'
 import './index.scss'
 import { OrderBuyArrayBto } from 'src/common/resultType/OrderBuy'
-import Taro from '@tarojs/taro'
+import Taro, { getCurrentInstance } from '@tarojs/taro'
+import SmallTab from '../../components/smallTab/index'
+import NopicTab from '../../components/noPicTab/index'
 
 interface IndexProps{
 }
@@ -15,7 +17,7 @@ interface IndexState{
 }
 
 export default class Index extends Component<IndexProps,IndexState> {
-  $router: any
+  $instance = getCurrentInstance();
   constructor(props:IndexProps){
     super(props)
     this.state = {
@@ -28,7 +30,8 @@ export default class Index extends Component<IndexProps,IndexState> {
   componentWillMount () { }
 
   async componentDidMount () {
-    const id = this.$router.params.id;
+    const router = this.$instance.router;
+    const id = router?.params.id? router.params.id : '0';
     const res = await queryOrderBuyList({kind: id});
     this.setState({
       OrderList: res.data,
@@ -44,19 +47,22 @@ export default class Index extends Component<IndexProps,IndexState> {
 
   componentDidHide () { }
 
-  async onPullDownRefresh(){
+  refresh = async() => {
     const {kind} = this.state;
-    Taro.showNavigationBarLoading();
     const res = await queryOrderBuyList({kind:kind});
+    console.log(res.data);
     this.setState({
       OrderList: res.data,
       pageNum: res.pageNum,
       pageMaxSize: res.pageMaxSize,
     })
+  }
+  async onPullDownRefresh(){
+    Taro.showNavigationBarLoading();
+    this.refresh();
     Taro.hideNavigationBarLoading();
     Taro.stopPullDownRefresh();
 }
-
   async onReachBottom(){
     const {pageMaxSize,pageNum,OrderList,kind} = this.state;
     const hasNext:boolean = pageMaxSize === pageNum ? false : true;
@@ -70,11 +76,18 @@ export default class Index extends Component<IndexProps,IndexState> {
       })
     }
   }
-
   render () {
+    const {OrderList} = this.state;
     return (
-      <View className='index'>
-        <Text>Hello world!</Text>
+        <View className='height'>
+          <View className='tab-content'>
+          {OrderList?.map((obj,index) => (
+            obj.picture?
+              <SmallTab orderList={obj} />
+              :
+              <NopicTab orderList={obj} />
+          ))}
+        </View>
       </View>
     )
   }

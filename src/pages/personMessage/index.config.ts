@@ -1,5 +1,5 @@
 export default definePageConfig({
-  navigationBarTitleText: '拼单列表',
+  navigationBarTitleText: '个人信息',
   enablePullDownRefresh: true, 
   onReachBottomDistance:50
 })

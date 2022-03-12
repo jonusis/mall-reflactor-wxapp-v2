@@ -1,0 +1,88 @@
+@import "~taro-ui/dist/style/components/icon.scss";
+.page-section{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+    border-bottom: solid 1px #EDEDED;
+    background-color: #ffffff;
+}
+.address{
+    font-size:30px;
+    font-weight:400;
+    color: #000000;
+    margin-left: 30px;
+    font-family:PingFang-SC-Regular;
+}
+.arry{
+    color: #000000;
+    font-size:30px;
+    font-weight:400;
+    margin-left: 416px;
+    margin-right: 20px;
+}
+.pho{
+    width:45px;
+    height:45px;
+}
+page{
+    background-color: #f0f0f0
+}
+.user{
+    width:750px;
+    height:382px;
+    padding-top: 70px;
+    background:rgba(255,255,255,1);
+}
+.avatar{
+    overflow:hidden;
+    display: block;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    width:150px;
+    height:150px;
+    margin: 0 auto;
+}
+.avater-img{
+    width:150px;
+    height:150px;
+}
+.name{
+    height:34px;
+    font-size:36px;
+    font-family:PingFang-SC-Regular;
+    font-weight:400;
+    color:rgba(0,0,0,1);
+    display: flex;
+    justify-content: center;
+    margin-top: 34px;
+}
+button{
+    outline: none;
+    border: 0px;
+    background: #FFFFFF;
+    line-height: 100px;
+    margin: 0;
+    padding: 0
+}
+button::after{
+    border: 0;
+}
+.choose-box{
+    width: 100%;
+    height: 400px;
+    margin-top: 30px;
+    background-color: #ffffff;
+}
+.s_bnt{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 32px;
+}
+.line{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

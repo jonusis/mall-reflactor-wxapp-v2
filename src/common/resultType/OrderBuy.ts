@@ -1,19 +1,32 @@
+import { CommentsBto } from "./Comments";
+
 interface OrderBuyDetailBto{
-    uid:string;
-    Content: string;
-    code: string; //药品编码
-    answer: string;
+    comments:CommentsBto[];
+    userPicture:string[];
+    id:string;
+    datetime: string;
+    time:string;
+    numNeed:number;
+    numExist:number;
+    heading:string;
+    content:string;
+    postID:string;
+    full:number;
+    kind:number;
+    location:string;
+    picture:string;
+    qq:string,
+    wechat:string,
+    tel:string;
 }
 export class OrderBuyDetailDto{
-    uid:string;
-    Content: string;
-    code: string; //药品编码
-    answer: string;
-    constructor(orderBuy:OrderBuyDetailBto){
-        this.uid = orderBuy.uid;
-        this.Content = orderBuy.Content;
+    code:string;
+    data: OrderBuyDetailBto;
+    msg: string;
+    constructor(orderBuy:any){
         this.code = orderBuy.code;
-        this.answer = orderBuy.answer;
+        this.data = orderBuy.data;
+        this.msg = orderBuy.msg;
     }
 }
 
@@ -46,5 +59,21 @@ export class OrderBuyArrayDto{
         this.msg = res.msg;
         this.pageNum = res.pageNum;
         this.pageMaxSize = res.pageMaxSize;
+    }
+}
+
+interface MineOrder{
+    Comments:OrderBuyArrayBto[]
+    Join:OrderBuyArrayBto[]
+    Post:OrderBuyArrayBto[]
+}
+export class OrderBuyMineDto{
+    code:string;
+    data:MineOrder;
+    msg:string;
+    constructor(res:any){
+        this.code = res.code;
+        this.data = res.data;
+        this.msg = res.msg;
     }
 }
